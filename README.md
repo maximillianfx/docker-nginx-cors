@@ -7,7 +7,9 @@ A docker container running a Nginx reverse proxy to solve the CORS problem with 
 When we are developing a frontend system that consumes an API, the access to that API via terminal or, e.g. Postman, looks great, but when we go to the browser (Chrome, Firefox, etc) we can face a problem with CORS. CORS (Cross-origin resource sharing) is a security technology implemented by browsers that defines ways to consume resources from servers in different domains. If the consumed resource (server) doesn't allow this consumption by a client in other domain, the problem is poped up at broser.
 
 ```
-Access to XMLHttpRequest at 'domain' from origin 'other domain' has been blocked by CORS policy: Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+Access to XMLHttpRequest at 'domain' from origin 'other domain' has been blocked by CORS policy:
+Response to preflight request doesn't pass access control check: No 'Access-Control-Allow-Origin'
+header is present on the requested resource.
 ```
 
 This error shows to user that the server don't allow the resouce consumption from a different domain.
