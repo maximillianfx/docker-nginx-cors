@@ -18,6 +18,11 @@ This error shows to user that the server don't allow the resouce consumption fro
 
 We have a 'simple' solution to this problem: enable CORS directly in your app (Node, Golang, Python, .NET Core, etc). This is not so 'simple', because needs an action from the backend developer, in most cases, develop this change, commit, pass in the CI/CD builds, publish, and all this pipeline could be much long.
 
-So, the solution proposed here, is to run a docker container with Nginx server like a reverse proxy.
+So, the solution proposed here, is to run a docker container with Nginx server like a reverse proxy. Run the following steps:
+
+1. Change the API url inside the `nginx.conf`
+2. `docker build -t cors .`
+3. `docker run -d --name cors -p your_port:80 cors`
 
 When we call our API, instead of using the API url, we will use the container url to consume the services. The trick here, is that the Nginx reverse proxy adds the correct header to indicate to browser that the server allows the request.
+
