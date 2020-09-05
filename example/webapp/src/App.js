@@ -5,12 +5,12 @@ import './App.css';
 function App() {
 
   const URL_CORS = "http://localhost:3535/hello"
-  //const URL_NO_CORS  = "http://localhost:4545/hello"
+  const URL_NO_CORS  = "http://localhost:4545/hello"
 
   const [world, setWorld] = useState("")
 
   useEffect(() => {
-    fetch(URL_CORS, { method: "GET" }).then((res) => res.json().then((data) => setWorld(data)))
+    fetch(URL_NO_CORS, { method: "GET" }).then((res) => res.json().then((data) => setWorld(data['message'])))
   });
 
   return (
