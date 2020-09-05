@@ -4,7 +4,7 @@
   "description": "Example API to simulate and solve the CORS problem",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/maximillianfx/docker-nginx-cors/issues"
   },
-  "homepage": "https://github.com/maximillianfx/docker-nginx-cors#readme"
+  "homepage": "https://github.com/maximillianfx/docker-nginx-cors#readme",
+  "devDependencies": {
+    "express": "^4.17.1"
+  }
 }
