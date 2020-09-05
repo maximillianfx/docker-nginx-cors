@@ -10,7 +10,7 @@ function App() {
   const [world, setWorld] = useState("")
 
   useEffect(() => {
-    fetch(URL_NO_CORS, { method: "GET" }).then((res) => res.json().then((data) => setWorld(data['message'])))
+    fetch(URL_CORS, { method: "GET" }).then((res) => res.json().then((data) => setWorld(data['message'])))
   });
 
   return (
