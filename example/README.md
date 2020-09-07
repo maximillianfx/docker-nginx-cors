@@ -16,15 +16,15 @@ To run this example, follow these steps:
 
 > \
 > The API url inside `nginx.conf` file points to
-> `host.docker.internal:3535`, that is, the host
-> itself and needs to be changed to the correct url
-> of your API if your API is running in a appropriate
+> `host.docker.internal:3535` (the host itself)
+> and it needs to be changed to the correct url
+> of your API if it's running in a appropriate
 > domain.
 >
-> If your API is running in other container, just put
-> your API container and the CORS container in the
-> same network and change the API url in `nginx.conf`
-> to the container name like:
+> If you have your API running in another container, just put it
+> in the same network as the CORS container and
+> change the API url in `nginx.conf` file
+> to the container name like this:
 >
 > ```nginx
 > upstream api {
