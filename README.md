@@ -21,8 +21,9 @@ We already have a 'simple' solution to this problem: enabling CORS directly in y
 The proposed solution here is to run a docker container with Nginx server acting as reverse proxy. To do so, run the following steps:
 
 1. Change the API url inside the `nginx.conf` file
-2. `docker build -t cors .`
-3. `docker run -d --name cors -p your_port:80 cors`
+2. Run the container following one of the options:
+- `docker build -t cors .` and `docker run -d --name cors -p your_port:80 cors`
+- `docker-compose up -d` (update the correct port mapping inside docker-compose.yml)
 
 When we call our API, instead of using the API url, we will use the container url to consume the services. The trick here is that the Nginx reverse proxy adds the correct header to indicate to your browser that the server allows the request.
 

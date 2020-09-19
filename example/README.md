@@ -7,10 +7,13 @@ Here we have a simple example to demonstrate the CORS problem.
 To run this example, follow these steps:
 
 1. Access the `api` folder and run `npm install`
-2. Access the `webapp` folder and run `npm install`
-3. Access the `nginx` folder and run `docker build -t cors .`
-4. Inside `nginx` folder, run `docker run -d --name cors -p 4545:80 cors`
-5. Access the `webapp` folder and run `yarn start` and open browser in `localhost:3000`
+2. Access the `api` folder and run `npm run start`
+3. Access the `webapp` folder and run `npm install`
+4. Access the `webapp` folder and run `yarn start` and open browser in `localhost:3000`
+5. Run the container following one of the options:
+- Access the `nginx` folder and run `docker build -t cors .` and `docker run -d --name cors -p 4545:80 cors`
+- Run `docker-compose up -d`
+
 6. Open your console in browser and see the CORS problem when using the variable `URL_CORS` in the react project. This variable points directly to the API.
 7. Change the url variable to `URL_NO_CORS` and the problem is solved. This variable points to the Nginx reverse proxy.
 
