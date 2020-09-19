@@ -1,0 +1,10 @@
+version: '3.5'
+
+services:
+  cors:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    container_name: cors
+    ports:
+      - "4545:80"
